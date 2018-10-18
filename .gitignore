@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+
+# node-waf configuration
+.lock-wscript
+
+#npm project config file
+.npmrc
+
+# Compiled binary addons
+dist/*
+
+# Dependency directory
+node_modules/*
+
+yarn-error.log
+yarn.lock
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# configuration files
+config/environments/*
+!config/environments/example.ts
+
+# editor files
+.idea/*
