@@ -7,16 +7,24 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 module.exports = {
   entry: {
-    app: './src/index.jsx',
+    app: './src/index.tsx',
   },
+  // Enable sourcemaps for debugging webpack's output.
+  devtool: "source-map",
+  resolve: {
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: [".ts", ".tsx", ".js", ".json"]
+},
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        },
+        test: /\.tsx$/,
+        loader: "ts-loader"
+      },
+      { 
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       },
       {
         test: /\.html$/,
