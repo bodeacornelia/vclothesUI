@@ -12,7 +12,7 @@
       }
   },
   "include": [
-      "./src/**/*"
+      "./src/**/*", "webpack.config.ts", "server.ts"
   ],
   "exclude": [
     "node_modules",

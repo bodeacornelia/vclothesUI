@@ -1,14 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { App } from './components/App';
-
-const getSometi = () => {
- console.log('Hamsterreee ');
-};
+import App from './app';
 
 ReactDOM.render(
-  <App
-    compiler="Typescript"
-    framework="React" />,
+  <App />,
   document.getElementById('root')
 );
