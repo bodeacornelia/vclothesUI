@@ -32,6 +32,26 @@ interface IProps {
 }
 
 class Login extends React.Component<IProps, {}> {
+  state = {
+    email: '',
+    password: '',
+    token: '',
+  };
+
+  handleChange = (name: string) => (event: any) => {
+    this.setState({ [name]: event.target.value });
+  }
+
+  handleSubmit = () => {
+    const { email, password } = this.state;
+    console.log(email);
+    console.log(password);
+    const data = {
+      email,
+      password,
+    };
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -41,6 +61,8 @@ class Login extends React.Component<IProps, {}> {
           id="email"
           label="Email"
           type="email"
+          value={this.state.email}
+          onChange={this.handleChange('email')}
           margin="normal"
           required
         />
@@ -48,10 +70,17 @@ class Login extends React.Component<IProps, {}> {
           id="password"
           label="Password"
           type="password"
+          value={this.state.password}
+          onChange={this.handleChange('password')}
           margin="normal"
           required
         />
-        <Button variant="contained" color="primary" className={classes.button}>
+        <Button
+          variant="contained"
+          color="primary"
+          className={classes.button}
+          onClick={this.handleSubmit}
+        >
           LOGIN
         </Button>
         <Link path="/" value="Forgot your password?" />
