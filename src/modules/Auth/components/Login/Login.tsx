@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core';
 import TextField from '../../../../components/TextField';
 import Link from '../../../../components/Link';
 import Header from '../../../../components/Typography/Header';
+import AuthGateway from '../../services/AuthGateway';
 
 const styles = (theme: any) => ({
   form: {
@@ -44,12 +45,14 @@ class Login extends React.Component<IProps, {}> {
 
   handleSubmit = () => {
     const { email, password } = this.state;
-    console.log(email);
-    console.log(password);
     const data = {
       email,
       password,
     };
+
+    const gateway = new AuthGateway();
+    gateway.login(data);
+
   }
 
   render() {
