@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { default as config } from '../../config/environments/development';
+import Auth from '../utils/AuthenticationUtils';
 
 const CONTENT_TYPE = 'application/json';
 const DEFAULT_METHOD = 'POST';

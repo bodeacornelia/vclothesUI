@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core';
 import TextField from '../../../../components/TextField';
 import Link from '../../../../components/Link';
 import Header from '../../../../components/Typography/Header';
-import AuthGateway from '../../services/AuthGateway';
+import { login } from '../../store/actions';
 
 const styles = (theme: any) => ({
   form: {
@@ -50,8 +50,8 @@ class Login extends React.Component<IProps, {}> {
       password,
     };
 
-    const gateway = new AuthGateway();
-    gateway.login(data);
+    // const gateway = new AuthGateway();
+    login(data);
 
   }
 
