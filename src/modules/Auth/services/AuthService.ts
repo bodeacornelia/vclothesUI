@@ -10,7 +10,7 @@ class AuthService {
 
   login(data: any): Promise<any> {
     return this.gateway.login(data)
-      .then(({ data }: any) => data.token)
+      .then(({ data }) => data.token)
       .catch((error) => Promise.reject(error));
   }
 }

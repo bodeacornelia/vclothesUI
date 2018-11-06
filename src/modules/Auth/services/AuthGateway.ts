@@ -5,6 +5,6 @@ export default class AuthGateway extends Gateway {
     super();
   }
 
-  login = (data: any) => this.request('/login', data)
+  login = (data: any) => this.loginRequest('/login', data)
     .then((response) => ({ ...response }))
 }
