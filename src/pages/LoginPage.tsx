@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Login from '../modules/Auth/components/Login';
+import LoginContainer from '../modules/Auth/containers/LoginContainer';
 import LoginLayout from '../layout/LoginLayout';
 
 const LoginPage = (props: any) => (
   <LoginLayout
     render={
-      <Login {...props} />
+      <LoginContainer {...props} />
     }
   />);
 

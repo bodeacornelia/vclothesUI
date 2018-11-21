@@ -33,7 +33,7 @@ export default class Gateway {
   get headers(): object {
     return {
       'Content-Type': CONTENT_TYPE,
-      'Authorization': `Bearer ${Auth.getToken()}`,
+      'Authorization': `bearer ${Auth.getToken()}`,
     };
   }
 
@@ -51,19 +51,6 @@ export default class Gateway {
       .then(this.onSuccess)
       .catch(this.onError);
   }
-
-  loginRequest(url: string, data?: object): Promise<IRequest> {
-    const options: IOptions = this.requestOptions(url, data);
-
-    return axios.create({
-      baseURL: this.baseUrl,
-      headers: {
-        'Content-Type': CONTENT_TYPE,
-      },
-    })(options).then(this.onSuccess)
-      .catch(this.onError);
-  }
-
 
   private onSuccess(response: any) {
     return response;

@@ -4,7 +4,6 @@ import { Button } from '@material-ui/core';
 import TextField from '../../../../components/TextField';
 import Link from '../../../../components/Link';
 import Header from '../../../../components/Typography/Header';
-import { login } from '../../store/actions';
 
 const styles = (theme: any) => ({
   form: {
@@ -30,13 +29,13 @@ const styles = (theme: any) => ({
 
 interface IProps {
   classes: any;
+  login(data: any): void;
 }
 
 class Login extends React.Component<IProps, {}> {
   state = {
     email: '',
     password: '',
-    token: '',
   };
 
   handleChange = (name: string) => (event: any) => {
@@ -50,9 +49,7 @@ class Login extends React.Component<IProps, {}> {
       password,
     };
 
-    // const gateway = new AuthGateway();
-    login(data);
-
+    this.props.login(data);
   }
 
   render() {

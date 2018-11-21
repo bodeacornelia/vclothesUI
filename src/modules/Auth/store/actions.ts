@@ -1,8 +1,11 @@
 import AuthService from '../services/AuthService';
+import Auth from '../../../utils/AuthenticationUtils';
+import { navigateTo } from '../../Menu/store/actions';
 
-export const login = (data: any) => {
-  AuthService.login(data)
-    .then((token: string) => {
-      localStorage.setItem('token', token)
-    })
+export const login = (payload: any) => (dispatch: any) => {
+  // AuthService.login(payload).then((token: string) => { Auth.setToken(token); })
+
+  // if(Auth.getToken()) {
+  dispatch(navigateTo({ path: '/' }))
+  // }
 };
