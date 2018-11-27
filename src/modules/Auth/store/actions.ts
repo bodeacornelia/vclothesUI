@@ -6,6 +6,10 @@ export const login = (payload: any) => (dispatch: any) => {
   AuthService.login(payload).then((token: string) => { Auth.setToken(token); })
 
   if (Auth.getToken()) {
-    dispatch(navigateTo({ path: '/' }))
+    dispatch(navigateTo({
+      path: '/home',
+      keys: {},
+      options: {}
+    }))
   }
 };

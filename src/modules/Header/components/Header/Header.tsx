@@ -1,18 +1,20 @@
 import * as React from 'react';
 import { AppBar, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import { HEADER_HEIGHT } from '../../../../constants/EnvironmentConstants';
 
 const styles = (theme: any) => ({
   header: {
-    height: '50px',
-  },
-  root: {
-    height: 'inherit',
+    gridArea: 'header',
     backgroundColor: 'black',
     color: 'pink',
+
+  },
+  toolBar: {
     display: 'flex',
     justifyContent: 'center',
-  },
+    minHeight: `${HEADER_HEIGHT}px`
+  }
 });
 
 interface IProps {
@@ -23,13 +25,13 @@ class Header extends React.Component<IProps, {}> {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.header}>
-        <AppBar className={classes.root}>
+      <AppBar position="static" className={classes.header}>
+        <div className={classes.toolBar}>
           <Typography variant="h6" color="inherit">
             Viorica's secret
             </Typography>
-        </AppBar>
-      </div>
+        </div>
+      </AppBar>
     );
   }
 }
