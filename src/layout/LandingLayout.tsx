@@ -26,7 +26,7 @@ class LandingLayout extends React.Component<IProps, {}> {
     return (
       <div className={classes.container}>
         <Header />
-        <div className={classes.page}>Hahhaaa</div>
+        <div className={classes.page}></div>
       </div>
     );
   }
