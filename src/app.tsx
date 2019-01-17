@@ -11,7 +11,8 @@ class App extends React.Component<{}, {}> {
     return (
       <Router history={history}>
         <Switch>
-          <Route exact path="/" component={LandingLayout} />
+          {/* <Route exact path="/" component={LandingLayout} /> */}
+          <Route exact path="/" component={LoginPage} />
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/home" component={LandingPage} />
         </Switch>

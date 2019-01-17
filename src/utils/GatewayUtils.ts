@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { default as config } from '../../config/environments/development';
 import Auth from '../utils/AuthenticationUtils';
+import config from '../../config/environments/development';
 
 const CONTENT_TYPE = 'application/json';
 const DEFAULT_METHOD = 'POST';
@@ -27,7 +27,7 @@ export default class Gateway {
   }
 
   get baseUrl(): string {
-    return `${this.config.API_URL}${this.config.API_BASE}`;
+    return `${this.config.BACKEND_URL}${this.config.API_BASE}`;
   }
 
   get headers(): object {
