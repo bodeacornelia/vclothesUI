@@ -27,6 +27,7 @@ export default class Gateway {
   }
 
   get baseUrl(): string {
+    console.log('Hmasterrree:', `${this.config.BACKEND_URL}${this.config.API_BASE}`);
     return `${this.config.BACKEND_URL}${this.config.API_BASE}`;
   }
 
