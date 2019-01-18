@@ -59,5 +59,6 @@
     "redux-actions": "^2.6.4",
     "redux-thunk": "^2.3.0",
     "ts-loader": "^5.2.2"
-  }
+  },
+  "proxy": "http://backend:3412"
 }
