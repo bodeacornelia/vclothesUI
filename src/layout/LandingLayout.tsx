@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { HEADER_HEIGHT} from '../constants/EnvironmentConstants';
-import Header from '../modules/Header/components/Header';
+import HeaderContainer from '../modules/Header/containers/HeaderContainer';
 
 const styles = (theme: any) => ({
   container: {
@@ -25,7 +25,7 @@ class LandingLayout extends React.Component<IProps, {}> {
     const { classes } = this.props;
     return (
       <div className={classes.container}>
-        <Header />
+        <HeaderContainer />
         <div className={classes.page}></div>
       </div>
     );

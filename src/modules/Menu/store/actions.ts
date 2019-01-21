@@ -1,5 +1,5 @@
-import { set } from '../../../utils/store/actions';
-import { history, compileHash } from '../../../utils/RouterUtils';
+import { set } from 'utils/store/actions';
+import { history, compileHash } from 'utils/RouterUtils';
 
 export const setRoute = set('environment', 'route');
 

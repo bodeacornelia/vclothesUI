@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
-import TextField from '../../../../components/TextField';
-import Link from '../../../../components/Link';
-import Header from '../../../../components/Typography/Header';
+import { TextField, Link, Header} from 'components';
 
 const styles = (theme: any) => ({
   form: {

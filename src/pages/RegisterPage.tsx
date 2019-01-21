@@ -1,11 +1,11 @@
 import * as React from 'react';
-import LoginContainer from '../modules/Login/containers/LoginContainer';
 import LoginLayout from '../layout/LoginLayout';
+import Register from 'modules/Register/components';
 
 const LoginPage = (props: any) => (
   <LoginLayout
     render={
-      <LoginContainer {...props} />
+      <Register {...props} />
     }
   />);
 

@@ -13,13 +13,15 @@ interface IProps {
   value: string;
   variant?: any;
   color?: any;
+  onClick(): void;
 }
 
-const ButtonComponent = ({ classes, value, variant, color = "primary" }: IProps) => (
+const ButtonComponent = ({ classes, value, variant, color = "primary", onClick }: IProps) => (
   <Button
     variant={variant && variant}
     className={classes.button}
     color={color}
+    onClick={onClick}
   >
     {value}
   </Button>
