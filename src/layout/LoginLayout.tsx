@@ -24,6 +24,14 @@ const styles = (theme: any) => ({
     alignItems: 'center',
     padding: '3em',
   },
+  form: {
+    minHeight: '60%',
+    width: '80%',
+    display: 'flex',
+    flexDirection: 'column' as 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   logo: {
     fontFamily: 'Alegreya SC',
   },
@@ -43,7 +51,9 @@ class LoginLayout extends React.Component<IProps, {}> {
           <Subheader value="Viorica's Secret" className={classes.logo} />
         </div>
         <div className={classes.formContainer}>
-          {this.props.render}
+          <form className={classes.form}>
+            {this.props.render}
+          </form>
         </div>
       </div>
     );

@@ -12,7 +12,7 @@
       }
   },
   "include": [
-      "./src/**/*", "webpack.config.ts", "server.ts"
+      "./src/**/*", "webpack.config.ts", "server.ts", "../vc/modules/auth/register/RegisterController.js"
   ],
   "exclude": [
     "node_modules",

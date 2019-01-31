@@ -4,14 +4,6 @@ import { Button as MuiButton } from '@material-ui/core';
 import {Header, TextField} from 'components';
 
 const styles = (theme: any) => ({
-  form: {
-    height: '60%',
-    width: '80%',
-    display: 'flex',
-    flexDirection: 'column' as 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   title: {
     color: '	#5B7265',
     marginBottom: '50px',
@@ -27,6 +19,7 @@ const styles = (theme: any) => ({
 
 interface IProps {
   classes?: any;
+  registerUser(data: any): void;
 };
 
 class RegisterComponent extends React.Component<IProps> {
@@ -50,10 +43,11 @@ class RegisterComponent extends React.Component<IProps> {
       last_name: lastName,
       email,
       password,
-      phone
+      phone,
+      role_id: 2
     };
 
-    // this.props.login(data);
+    this.props.registerUser(data);
   }
 
   isFormCompleted = () => {
@@ -66,7 +60,7 @@ class RegisterComponent extends React.Component<IProps> {
     const { firstName, lastName, email, password, phone } = this.state;
 
     return (
-      <form className={classes.form}>
+      <>
         <Header value="Create new account" className={classes.title} />
         <TextField
           id="firstName"
@@ -118,7 +112,7 @@ class RegisterComponent extends React.Component<IProps> {
         >
           REGISTER
         </MuiButton>
-      </form>
+      </>
     );
   }
 }

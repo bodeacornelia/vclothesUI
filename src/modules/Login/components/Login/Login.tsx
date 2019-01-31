@@ -1,17 +1,9 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
-import { TextField, Link, Header} from 'components';
+import { TextField, Link, Header } from 'components';
 
 const styles = (theme: any) => ({
-  form: {
-    height: '60%',
-    width: '80%',
-    display: 'flex',
-    flexDirection: 'column' as 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   title: {
     color: '	#5B7265',
     marginBottom: '50px',
@@ -26,13 +18,13 @@ const styles = (theme: any) => ({
 });
 
 interface IProps {
-  classes: any;
+  classes?: any;
   login(data: any): void;
 }
 
 class Login extends React.Component<IProps, {}> {
   state = {
-    email: '',
+    username: '',
     password: '',
   };
 
@@ -41,9 +33,9 @@ class Login extends React.Component<IProps, {}> {
   }
 
   handleSubmit = () => {
-    const { email, password } = this.state;
+    const { username, password } = this.state;
     const data = {
-      email,
+      username,
       password,
     };
 
@@ -52,15 +44,16 @@ class Login extends React.Component<IProps, {}> {
 
   render() {
     const { classes } = this.props;
+    const { username, password } = this.state;
     return (
-      <form className={classes.form}>
+      <>
         <Header value="Login to your account" className={classes.title} />
         <TextField
           id="email"
           label="Email"
           type="email"
-          value={this.state.email}
-          onChange={this.handleChange('email')}
+          value={username}
+          onChange={this.handleChange('username')}
           margin="normal"
           required
         />
@@ -68,7 +61,7 @@ class Login extends React.Component<IProps, {}> {
           id="password"
           label="Password"
           type="password"
-          value={this.state.password}
+          value={password}
           onChange={this.handleChange('password')}
           margin="normal"
           required
@@ -82,7 +75,7 @@ class Login extends React.Component<IProps, {}> {
           LOGIN
         </Button>
         <Link path="/" value="Forgot your password?" />
-      </form>
+      </>
 
     );
   }
