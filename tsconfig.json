@@ -12,7 +12,7 @@
       }
   },
   "include": [
-      "./src/**/*", "webpack.config.ts", "server.ts", "../vc/modules/auth/register/RegisterController.js"
+      "./src/**/*", "webpack.config.ts", "server.ts", "../vc/modules/auth/register/RegisterController.js", "../vclothes-backend/ormconfig.ts", "../vclothes-backend/src/modules/user/UserService.ts", "../vclothes-backend/src/modules/user/router.ts", "../vclothes-backend/server.ts"
   ],
   "exclude": [
     "node_modules",

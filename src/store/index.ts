@@ -6,9 +6,9 @@ export default function configureStore() {
   const middlewares = [thunkMiddleware];
   let middleware = applyMiddleware(...middlewares);
 
-  const devTools = (window as any).devToolsExtension();
+  // const devTools = (window as any).devToolsExtension() || '';
 
-  middleware = compose(middleware, devTools);
+  middleware = compose(middleware);
 
   const store = middleware(createStore)(rootReducer);
 
