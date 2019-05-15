@@ -1,21 +1,8 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Button as MuiButton } from '@material-ui/core';
-import {Header, TextField} from 'components';
-
-const styles = (theme: any) => ({
-  title: {
-    color: '	#5B7265',
-    marginBottom: '50px',
-  },
-  button: {
-    marginTop: '3em',
-    marginBottom: '2em',
-    width: '182px',
-    fontSize: '17px',
-    backgroundColor: '#2597d7',
-  },
-});
+import { Header, TextField } from 'components';
+import { REGISTER_BTN, REGISTER_TITLE, FIRST_NAME, LAST_NAME, PHONE, PASSWORD, EMAIL} from 'constants/AppStringConstants'
 
 interface IProps {
   classes?: any;
@@ -43,8 +30,7 @@ class RegisterComponent extends React.Component<IProps> {
       last_name: lastName,
       email,
       password,
-      phone,
-      role_id: 2
+      phone
     };
 
     this.props.registerUser(data);
@@ -61,10 +47,10 @@ class RegisterComponent extends React.Component<IProps> {
 
     return (
       <>
-        <Header value="Create new account" className={classes.title} />
+        <Header value={REGISTER_TITLE} className={classes.title} />
         <TextField
           id="firstName"
-          label="First name"
+          label={FIRST_NAME}
           value={firstName}
           onChange={this.handleChange('firstName')}
           margin="normal"
@@ -72,7 +58,7 @@ class RegisterComponent extends React.Component<IProps> {
         />
         <TextField
           id="lastName"
-          label="Last name"
+          label={LAST_NAME}
           value={lastName}
           onChange={this.handleChange('lastName')}
           margin="normal"
@@ -80,7 +66,7 @@ class RegisterComponent extends React.Component<IProps> {
         />
         <TextField
           id="email"
-          label="Email"
+          label={EMAIL}
           value={email}
           onChange={this.handleChange('email')}
           margin="normal"
@@ -88,7 +74,7 @@ class RegisterComponent extends React.Component<IProps> {
         />
         <TextField
           id="password"
-          label="Password"
+          label={PASSWORD}
           type="password"
           value={password}
           onChange={this.handleChange('password')}
@@ -97,7 +83,7 @@ class RegisterComponent extends React.Component<IProps> {
         />
         <TextField
           id="phone"
-          label="Phone"
+          label={PHONE}
           value={phone}
           onChange={this.handleChange('phone')}
           margin="normal"
@@ -110,11 +96,26 @@ class RegisterComponent extends React.Component<IProps> {
           onClick={this.handleSubmit}
           disabled={!this.isFormCompleted()}
         >
-          REGISTER
+          {REGISTER_BTN}
         </MuiButton>
       </>
     );
   }
 }
+
+const styles = (theme: any) => ({
+  title: {
+    color: '	#5B7265',
+    marginBottom: '50px',
+
+  },
+  button: {
+    marginTop: '3em',
+    marginBottom: '2em',
+    width: '182px',
+    fontSize: '17px',
+    backgroundColor: '#2597d7',
+  },
+});
 
 export default withStyles(styles)(RegisterComponent);

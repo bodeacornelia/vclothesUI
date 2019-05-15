@@ -2,27 +2,14 @@ import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
 import { TextField, Link, Header } from 'components';
-
-const styles = (theme: any) => ({
-  title: {
-    color: '	#5B7265',
-    marginBottom: '50px',
-  },
-  button: {
-    marginTop: '3em',
-    marginBottom: '2em',
-    width: '182px',
-    fontSize: '17px',
-    backgroundColor: '#2597d7',
-  },
-});
+import { LOGIN_BTN, LOGIN_TITLE, EMAIL, PASSWORD, FORGOT_PASSWORD} from 'constants/AppStringConstants';
 
 interface IProps {
   classes?: any;
   login(data: any): void;
 }
 
-class Login extends React.Component<IProps, {}> {
+class Login extends React.Component<IProps> {
   state = {
     username: '',
     password: '',
@@ -47,10 +34,10 @@ class Login extends React.Component<IProps, {}> {
     const { username, password } = this.state;
     return (
       <>
-        <Header value="Login to your account" className={classes.title} />
+        <Header value={LOGIN_TITLE} className={classes.title} />
         <TextField
           id="email"
-          label="Email"
+          label={EMAIL}
           type="email"
           value={username}
           onChange={this.handleChange('username')}
@@ -59,7 +46,7 @@ class Login extends React.Component<IProps, {}> {
         />
         <TextField
           id="password"
-          label="Password"
+          label={PASSWORD}
           type="password"
           value={password}
           onChange={this.handleChange('password')}
@@ -72,13 +59,27 @@ class Login extends React.Component<IProps, {}> {
           className={classes.button}
           onClick={this.handleSubmit}
         >
-          LOGIN
+          {LOGIN_BTN}
         </Button>
-        <Link path="/" value="Forgot your password?" />
+        <Link path="/" value={FORGOT_PASSWORD} />
       </>
 
     );
   }
 }
+
+const styles = (theme: any) => ({
+  title: {
+    color: '	#5B7265',
+    marginBottom: '50px',
+  },
+  button: {
+    marginTop: '3em',
+    marginBottom: '2em',
+    width: '182px',
+    fontSize: '17px',
+    backgroundColor: '#2597d7',
+  },
+});
 
 export default withStyles(styles)(Login);

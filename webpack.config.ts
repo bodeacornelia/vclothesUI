@@ -44,6 +44,11 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        loaders: ['style-loader', 'css-loader'],
+      }
     ],
   },
   plugins: [htmlPlugin, new webpack.DefinePlugin({

@@ -6,30 +6,7 @@ import {
 } from '@material-ui/core';
 import { HEADER_HEIGHT } from 'constants/EnvironmentConstants';
 import { Logo, Button } from 'components';
-import Search from '../Search';
-
-const styles = (theme: any) => ({
-  root: {
-    flexGrow: 1,
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  header: {
-    gridArea: 'header',
-    backgroundColor: 'white',
-    color: 'black',
-  },
-  toolBar: {
-    display: 'flex',
-    minHeight: `${HEADER_HEIGHT}px`
-  },
-  actions: {
-    flexGrow: 1,
-    display: 'flex',
-    justifyContent: 'flex-end',
-  }
-});
+import { LOGIN_BTN, REGISTER_BTN } from 'constants/AppStringConstants'
 
 interface IProps {
   classes?: any;
@@ -44,19 +21,44 @@ class Header extends React.Component<IProps> {
     return (
       <div className={classes.root}>
         <MuiAppBar position="static" className={classes.header}>
-          <MuiToolbar>
-            <div className={classes.grow}><Logo /> </div>
-            <Search />
+          <MuiToolbar className={classes.toolBar}>
             <div className={classes.actions}>
-              <Button color="inherit" value="Login" onClick={navigateToLoginPage} />
-              <Button color="inherit" value="Register" onClick={navigateToRegisterPage} />
+              <Button color="inherit" value={LOGIN_BTN} onClick={navigateToLoginPage} />
+              <Button color="inherit" value={REGISTER_BTN} onClick={navigateToRegisterPage} />
             </div>
-
+            <div className={classes.logo}><Logo /> </div>
           </MuiToolbar>
         </MuiAppBar>
       </div>
     );
   }
 }
+
+const styles = (theme: any) => ({
+  root: {
+    flexGrow: 1,
+  },
+  logo: {
+    display: 'flex',
+    justifyContent: 'center'
+  },
+  header: {
+    gridArea: 'header',
+    backgroundColor: 'white',
+    color: 'black',
+    boxShadow: 'none'
+  },
+  toolBar: {
+    display: 'flex',
+    flexDirection: 'column' as 'column',
+    alignItems: 'unset',
+    minHeight: `${HEADER_HEIGHT}px`
+  },
+  actions: {
+    flexGrow: 1,
+    display: 'flex',
+    justifyContent: 'flex-end',
+  }
+});
 
 export default withStyles(styles)(Header);

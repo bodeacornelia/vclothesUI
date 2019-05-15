@@ -2,6 +2,29 @@ import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Subheader } from '../components/Typography';
 
+interface IProps {
+  render: any;
+  classes: any;
+}
+
+class LoginLayout extends React.Component<IProps> {
+  render() {
+    const { classes, render } = this.props;
+    return (
+      <div className={classes.container}>
+        <div className={classes.content}>
+          <Subheader value="Viorica's Secret" className={classes.logo} />
+        </div>
+        <div className={classes.formContainer}>
+          <form className={classes.form}>
+            {render}
+          </form>
+        </div>
+      </div>
+    );
+  }
+}
+
 const styles = (theme: any) => ({
   container: {
     height: '100%',
@@ -36,28 +59,5 @@ const styles = (theme: any) => ({
     fontFamily: 'Alegreya SC',
   },
 });
-
-interface IProps {
-  render: any;
-  classes: any;
-}
-
-class LoginLayout extends React.Component<IProps, {}> {
-  render() {
-    const { classes } = this.props;
-    return (
-      <div className={classes.container}>
-        <div className={classes.content}>
-          <Subheader value="Viorica's Secret" className={classes.logo} />
-        </div>
-        <div className={classes.formContainer}>
-          <form className={classes.form}>
-            {this.props.render}
-          </form>
-        </div>
-      </div>
-    );
-  }
-}
 
 export default withStyles(styles)(LoginLayout);

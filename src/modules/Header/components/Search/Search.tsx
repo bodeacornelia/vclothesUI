@@ -3,6 +3,26 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
+import { SEARCH_PLACEHOLDER } from 'constants/AppStringConstants';
+
+interface IProps {
+  classes: any;
+}
+
+const SearchComponent = ({ classes }: IProps) => (
+  <div className={classes.search}>
+    <div className={classes.searchIcon}>
+      <SearchIcon />
+    </div>
+    <InputBase
+      placeholder={SEARCH_PLACEHOLDER}
+      classes={{
+        root: classes.inputRoot,
+        input: classes.inputInput,
+      }}
+    />
+  </div>
+);
 
 const styles = (theme: any) => ({
   search: {
@@ -44,24 +64,5 @@ const styles = (theme: any) => ({
     borderBottom: '1px solid #d9cfcf',
   }
 });
-
-interface IProps {
-  classes: any;
-}
-
-const SearchComponent = ({ classes }: IProps) => (
-  <div className={classes.search}>
-    <div className={classes.searchIcon}>
-      <SearchIcon />
-    </div>
-    <InputBase
-      placeholder="Search…"
-      classes={{
-        root: classes.inputRoot,
-        input: classes.inputInput,
-      }}
-    />
-  </div>
-);
 
 export default withStyles(styles)(SearchComponent);
