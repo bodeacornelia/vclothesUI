@@ -7,7 +7,7 @@ class RegisterService {
     this.gateway = new RegisterGateway();
   }
 
-  registerUser = (payload: any) => {
+  registerUser = (payload) => {
     this.gateway.registerUser(payload);
   }
 }

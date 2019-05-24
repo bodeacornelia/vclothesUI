@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Button as MuiButton } from '@material-ui/core';
-import { Header, TextField } from 'components';
+import { TextField } from 'components';
+import { Header } from 'components/Typography/Header';
 import { REGISTER_BTN, REGISTER_TITLE, FIRST_NAME, LAST_NAME, PHONE, PASSWORD, EMAIL} from 'constants/AppStringConstants'
 
 interface IProps {
@@ -18,7 +19,7 @@ class RegisterComponent extends React.Component<IProps> {
     phone: ''
   };
 
-  handleChange = (name: string) => (event: any) => {
+  handleChange = (name) => (event) => {
     this.setState({ [name]: event.target.value });
   }
 
@@ -103,7 +104,7 @@ class RegisterComponent extends React.Component<IProps> {
   }
 }
 
-const styles = (theme: any) => ({
+const styles = (theme) => ({
   title: {
     color: '	#5B7265',
     marginBottom: '50px',

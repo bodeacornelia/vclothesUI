@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import Login from '../components/Login';
 import { login } from '../store/actions';
 
-const LoginContainer = (props: any) => <Login {...props} />;
+const LoginContainer = (props) => <Login {...props} />;
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state) => ({
 
 });
 

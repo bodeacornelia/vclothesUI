@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Subheader } from '../components/Typography';
+import { Subheader } from '../components/Typography/Subheader';
 
 interface IProps {
   render: any;
@@ -25,7 +25,7 @@ class LoginLayout extends React.Component<IProps> {
   }
 }
 
-const styles = (theme: any) => ({
+const styles = (theme) => ({
   container: {
     height: '100%',
     display: 'flex',

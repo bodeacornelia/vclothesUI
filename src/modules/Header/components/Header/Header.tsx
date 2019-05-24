@@ -5,8 +5,9 @@ import {
   AppBar as MuiAppBar
 } from '@material-ui/core';
 import { HEADER_HEIGHT } from 'constants/EnvironmentConstants';
-import { Logo, Button } from 'components';
+import { Button } from 'components';
 import { LOGIN_BTN, REGISTER_BTN } from 'constants/AppStringConstants'
+import Logo from '../Logo';
 
 interface IProps {
   classes?: any;
@@ -34,7 +35,7 @@ class Header extends React.Component<IProps> {
   }
 }
 
-const styles = (theme: any) => ({
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
   },

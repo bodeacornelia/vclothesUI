@@ -24,7 +24,7 @@ const SearchComponent = ({ classes }: IProps) => (
   </div>
 );
 
-const styles = (theme: any) => ({
+const styles = (theme) => ({
   search: {
     flexGrow: 3,
     position: 'relative' as 'relative',

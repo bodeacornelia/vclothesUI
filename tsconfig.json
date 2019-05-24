@@ -2,14 +2,14 @@
   "compilerOptions": {
       "outDir": "./dist/",
       "sourceMap": true,
-      "noImplicitAny": true,
+      "noImplicitAny": false,
       "module": "commonjs",
       "target": "es6",
       "jsx": "react",
       "baseUrl": "./src",
       "paths": {
         "modules/*": [ "modules/*" ],
-      }
+      },
   },
   "include": [
       "./src/**/*", "webpack.config.ts", "server.ts", "../vc/modules/auth/register/RegisterController.js", "../vclothes-backend/ormconfig.ts", "../vclothes-backend/src/modules/user/UserService.ts", "../vclothes-backend/src/modules/user/router.ts", "../vclothes-backend/server.ts"

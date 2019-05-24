@@ -23,7 +23,7 @@ class LandingLayout extends React.Component<IProps> {
   }
 }
 
-const styles = (theme: any) => ({
+const styles = (theme) => ({
   container: {
     height: '100vh',
     display: 'grid',

@@ -12,7 +12,7 @@ const LogoComponent = ({ classes }: IProps) => (
   </Typography>
 );
 
-const styles = (theme: any) => ({
+const styles = (theme) => ({
   logo: {
     fontFamily: 'Alegreya SC',
     fontSize: '30px'

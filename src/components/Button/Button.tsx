@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = (theme: any) => ({
+const styles = (theme) => ({
   button: {
     margin: theme.spacing.unit,
   },

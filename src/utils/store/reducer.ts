@@ -4,12 +4,12 @@ import { camelCase } from 'lodash';
 
 const INITIAL_STATE = Map({});
 
-const actionHandlersMap: any = {
-  [constants.ACTION_SET]: (storePath: any, payload: any, state: any) =>
+const actionHandlersMap = {
+  [constants.ACTION_SET]: (storePath, payload, state) =>
     state.setIn(storePath, payload) // Ex: state.setIn(['x', 'y', 'z'], 456) // { x: { y: { z: 456 }}} 
 }
 
-export default (state = INITIAL_STATE, action: any = {}) => {
+export default (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
 
   const actionTypes = [

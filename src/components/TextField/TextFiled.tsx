@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TextField } from '@material-ui/core';
 
-const TextFieldComponent = (props: any) => (
+const TextFieldComponent = (props) => (
   <TextField
     fullWidth
     {...props}

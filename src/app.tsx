@@ -6,7 +6,7 @@ import RegisterPage from 'pages/RegisterPage';
 import HomePage from 'pages/HomePage';
 import LandingLayout from './layout/LandingLayout';
 
-const LandingPage = (props: any) => <div>Hello User</div>
+const LandingPage = (props) => <div>Hello User</div>
 
 class App extends React.Component {
   render() {

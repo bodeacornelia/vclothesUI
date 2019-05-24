@@ -8,7 +8,7 @@ class AuthService {
     this.gateway = new AuthGateway();
   }
 
-  login(data: any): Promise<any> {
+  login(data): Promise<any> {
     return this.gateway.login(data)
       .then(({ data }) => data.token)
       .catch((error) => Promise.reject(error));

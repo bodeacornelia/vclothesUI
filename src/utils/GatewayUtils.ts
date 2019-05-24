@@ -45,7 +45,7 @@ export default class Gateway {
     });
   }
 
-  request(url: string, data?: object): Promise<IRequest> {
+  request(url, data?): Promise<IRequest> {
     const options: IOptions = this.requestOptions(url, data);
 
     return this.client(options)
@@ -53,15 +53,15 @@ export default class Gateway {
       .catch(this.onError);
   }
 
-  private onSuccess(response: any) {
+  private onSuccess(response) {
     return response;
   }
 
-  private onError(error: any) {
+  private onError(error) {
     return Promise.reject(error.response || error.message);
   }
 
-  private requestOptions(endpoint: string, data: object): IOptions {
+  private requestOptions(endpoint, data): IOptions {
     const options: IOptions = {};
 
     options.method = this.defaultMethod;

@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
-import { TextField, Link, Header } from 'components';
+import { TextField, Link } from 'components';
+import { Header } from 'components/Typography/Header';
 import { LOGIN_BTN, LOGIN_TITLE, EMAIL, PASSWORD, FORGOT_PASSWORD} from 'constants/AppStringConstants';
 
 interface IProps {
@@ -15,7 +16,7 @@ class Login extends React.Component<IProps> {
     password: '',
   };
 
-  handleChange = (name: string) => (event: any) => {
+  handleChange = (name) => (event) => {
     this.setState({ [name]: event.target.value });
   }
 
@@ -68,7 +69,7 @@ class Login extends React.Component<IProps> {
   }
 }
 
-const styles = (theme: any) => ({
+const styles = (theme) => ({
   title: {
     color: '	#5B7265',
     marginBottom: '50px',
