@@ -63,6 +63,9 @@ class Login extends React.Component<IProps> {
         >
           {LOGIN_BTN}
         </Button>
+
+        <a href="http://localhost:3412/api/facebook-login">Facebook Login</a>
+
         <Button
           variant="contained"
           color="primary"
