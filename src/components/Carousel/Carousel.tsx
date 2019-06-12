@@ -11,8 +11,8 @@ export const CarouselComponent = ({ carouselImages }) => (
     interval={4000}
     showStatus={false}>
     {
-      carouselImages.map((image) => (
-        <div style={inlineStyle.imageContainer(image.url)}>
+      carouselImages.map((image, index) => (
+        <div key={index} style={inlineStyle.imageContainer(image.url)}>
           <p className="legend">{image.legend}</p>
         </div>
       ))

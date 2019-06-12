@@ -9,3 +9,11 @@ export const login = (payload) => (dispatch) => {
     dispatch(navigateTo({ path: '/home' }))
   }
 };
+
+export const facebookLogin = () => (dispatch) => {
+  AuthService.facebookLogin().then((token) => { Auth.setToken(token); })
+
+  if (Auth.getToken()) {
+    dispatch(navigateTo({ path: '/home' }))
+  }
+};

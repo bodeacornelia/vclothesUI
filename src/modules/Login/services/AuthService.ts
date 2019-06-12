@@ -13,6 +13,12 @@ class AuthService {
       .then(({ data }) => data.token)
       .catch((error) => Promise.reject(error));
   }
+
+  facebookLogin(): Promise<any> {
+    return this.gateway.facebookLogin()
+      .then(({ data }) => data.token)
+      .catch((error) => Promise.reject(error));
+  }
 }
 
 export default new AuthService();

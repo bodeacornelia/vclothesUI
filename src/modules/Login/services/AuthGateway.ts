@@ -7,4 +7,7 @@ export default class AuthGateway extends Gateway {
 
   login = (data) => this.request('/login', data)
     .then((response) => ({ ...response }))
+
+  facebookLogin = () => this.request('/facebook-login')
+    .then((response) => ({ ...response }))
 }

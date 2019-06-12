@@ -3,7 +3,7 @@ import Auth from '../utils/AuthenticationUtils';
 import config from '../../config/environments/development';
 
 const CONTENT_TYPE = 'application/json';
-const DEFAULT_METHOD = 'POST';
+const DEFAULT_METHOD = 'GET';
 
 interface IOptions {
   method?: string;
