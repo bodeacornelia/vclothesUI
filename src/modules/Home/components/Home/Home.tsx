@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core';
 import { CarouselComponent } from 'components/Carousel/Carousel';
 import TailorProfile from '../TailorProfile';
 import RecentProducts from '../RecentProducts';
+import MakeAnAppointment from '../MakeAnAppointment';
 import {
   CAROUSEL_LEGEND_1,
   CAROUSEL_LEGEND_2,
@@ -35,6 +36,7 @@ class Home extends React.Component<IProps> {
           <TailorProfile />
           <RecentProducts />
         </div>
+        <MakeAnAppointment />
       </>
     );
   }

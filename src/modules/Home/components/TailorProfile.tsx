@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core';
 import { Subheader } from 'components/Typography/Subheader';
-import { Header } from 'components/Typography/Header';
+import { Title } from 'components/Typography/Title';
 import { TAILOR_PROFILE_TITLE, TAILOR_PROFILE_DESCRIPTION } from 'constants/AppStringConstants'
 
 interface IProps {
@@ -14,7 +14,7 @@ class TailorProfile extends React.Component<IProps> {
     return (
       <>
         <div className={classes.title}>
-          <Header value={TAILOR_PROFILE_TITLE} />
+          <Title value={TAILOR_PROFILE_TITLE} />
         </div>
         <div className={classes.profileContainer}>
           <div className={classes.tailorDescription}>
@@ -50,6 +50,7 @@ const styles = (theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     height: '200px',
+    textTransform: 'uppercase' as 'uppercase'
   },
 });
 

@@ -22,7 +22,8 @@ module.exports = {
       pages: path.resolve(__dirname, 'src/pages/'),
       utils: path.resolve(__dirname, 'src/utils/'),
       modules: path.resolve(__dirname, 'src/modules/'),
-      constants: path.resolve(__dirname, 'src/constants/')
+      constants: path.resolve(__dirname, 'src/constants/'),
+      config: path.resolve(__dirname, 'config/')
     },
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['.ts', '.tsx', '.js', '.json'],

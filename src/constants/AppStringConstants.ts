@@ -8,6 +8,7 @@ export const LOGIN_TITLE = "Conectează-te la contul tău";
 export const EMAIL = "Email";
 export const PASSWORD = "Parolă";
 export const FORGOT_PASSWORD = "Ți-ai uitat parola?";
+export const FACEBOOK_LOGIN_BUTTON = "Autentifică-te cu facebook";
 
 // REGISTER
 export const REGISTER_TITLE = "Crează cont nou";
@@ -22,6 +23,8 @@ export const TAILOR_PROFILE_TITLE = 'Fă cunoștință cu specialistul nostru î
 export const TAILOR_PROFILE_DESCRIPTION = 'Athleisure continues to be a hot trend - the great thing about the sportswear \n ' +
 'look is, of course, that it doesn’t just look cool but is also extremely comfortable. The best way here is to mix your everyday clothes with the sporty pieces - the combination is what makes it exciting \n' +
 'Athleisure continues to be a hot trend - the great thing about the sportswear \n ' +
-'look is, of course, that it doesn’t just look cool but is also extremely comfortable.';
+'look is, of course, that it doesn’t just look cool but is also extremely comfortable. \n' + 
+'Athleisure continues to be a hot trend - the great thing about the sportswear \n ' +
+'look is, of course, that it doesn’t just look cool but is also extremely comfortable. The best way here is to mix your everyday clothes with the sporty pieces - the combination is what makes it exciting';
 export const RECENT_PRODUCTS_TITLE = 'Cele mai recente creații'
 

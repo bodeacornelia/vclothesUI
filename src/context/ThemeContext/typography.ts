@@ -1,6 +1,7 @@
 const fontFamily = ([
-  'Helvetica', 
-  'Arial', 
+  'Times New Roman',
+  'Helvetica',
+  'Arial',
   'sans-serif'
 ].join(','));
 

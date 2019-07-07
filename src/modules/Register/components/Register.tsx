@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Button as MuiButton } from '@material-ui/core';
 import { TextField } from 'components';
 import { Header } from 'components/Typography/Header';
-import { REGISTER_BTN, REGISTER_TITLE, FIRST_NAME, LAST_NAME, PHONE, PASSWORD, EMAIL} from 'constants/AppStringConstants'
+import { REGISTER_BTN, REGISTER_TITLE, FIRST_NAME, LAST_NAME, PHONE, PASSWORD, EMAIL } from 'constants/AppStringConstants'
 
 interface IProps {
   classes?: any;
@@ -27,8 +27,7 @@ class RegisterComponent extends React.Component<IProps> {
     const { firstName, lastName, email, password, phone } = this.state;
 
     const data = {
-      first_name: firstName,
-      last_name: lastName,
+      name: `${firstName} ${lastName}`,
       email,
       password,
       phone

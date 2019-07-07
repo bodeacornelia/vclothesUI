@@ -6,8 +6,8 @@ interface IProps {
   className?: any;
 }
 
-export const Subheader = ({ value, ...props }: IProps) => (
-  <Typography variant="h6" gutterBottom {...props}>
+export const BodyText = ({ value, ...props }: IProps) => (
+  <Typography variant="body1" gutterBottom {...props}>
     {value}
   </Typography>
 );

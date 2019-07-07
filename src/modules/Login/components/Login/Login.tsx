@@ -4,11 +4,11 @@ import { Button } from '@material-ui/core';
 import { TextField, Link } from 'components';
 import { Header } from 'components/Typography/Header';
 import { LOGIN_BTN, LOGIN_TITLE, EMAIL, PASSWORD, FORGOT_PASSWORD } from 'constants/AppStringConstants';
+import LoginFacebookButton from 'modules/Login/components/Login/components/FacebookLoginButton';
 
 interface IProps {
   classes?: any;
   login(data: any): void;
-  facebookLogin(): void;
 }
 
 class Login extends React.Component<IProps> {
@@ -32,11 +32,14 @@ class Login extends React.Component<IProps> {
   }
 
   render() {
-    const { classes, facebookLogin } = this.props;
+    const { classes } = this.props;
     const { username, password } = this.state;
     return (
       <>
         <Header value={LOGIN_TITLE} className={classes.title} />
+
+        <LoginFacebookButton />
+
         <TextField
           id="email"
           label={EMAIL}
@@ -63,17 +66,7 @@ class Login extends React.Component<IProps> {
         >
           {LOGIN_BTN}
         </Button>
-
-        <a href="http://localhost:3412/api/facebook-login">Facebook Login</a>
-
-        <Button
-          variant="contained"
-          color="primary"
-          className={classes.button}
-          onClick={facebookLogin}
-        >
-          {'Login with facebook'}
-        </Button>
+        
         <Link path="/" value={FORGOT_PASSWORD} />
       </>
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { withStyles } from '@material-ui/core';
-import { Header } from 'components/Typography/Header';
+import { Title } from 'components/Typography/Title';
 import { RECENT_PRODUCTS_TITLE } from 'constants/AppStringConstants';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,7 +25,7 @@ class RecentProducts extends React.Component<IProps> {
     return (
       <>
         <div className={classes.title}>
-          <Header value={RECENT_PRODUCTS_TITLE} />
+          <Title value={RECENT_PRODUCTS_TITLE} />
         </div>
         <div className={classes.galleryContainer}>
           <Slider {...this.settings}>
@@ -54,9 +54,10 @@ const styles = (theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     height: '200px',
+    textTransform: 'uppercase' as 'uppercase'
   },
   galleryContainer: {
-    height: '500px',
+    height: '350px',
     width: 'inherit',
     maxWidth: '1333px'
   }

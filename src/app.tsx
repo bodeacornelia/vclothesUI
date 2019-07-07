@@ -1,14 +1,22 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { Router, Route, Switch } from 'react-router-dom';
 import { history } from 'utils/RouterUtils';
 import LoginPage from 'pages/LoginPage';
 import RegisterPage from 'pages/RegisterPage';
 import HomePage from 'pages/HomePage';
-import LandingLayout from './layout/LandingLayout';
+import { initRouter } from 'modules/Menu/store/actions';
+import { PATHS } from 'constants/RouteConstants';
 
-const LandingPage = (props) => <div>Hello User</div>
+interface IProps {
+  initRouter(paths: string[]);
+}
 
-class App extends React.Component {
+class App extends React.Component<IProps> {
+  componentDidMount() {
+    this.props.initRouter(PATHS);
+  }
+
   render() {
     return (
       <Router history={history}>
@@ -23,4 +31,6 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect(null, {
+  initRouter
+})(App);
